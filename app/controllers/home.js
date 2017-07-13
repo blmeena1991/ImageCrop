@@ -11,9 +11,6 @@ router.get('/', function (req, res, next) {
     res.render('index');
 });
 
-
-
-
 router.get('/articles', function (req, res, next) {
   Article.find(function (err, articles) {
     if (err) return next(err);

@@ -1,14 +1,61 @@
+<link rel="stylesheet" href="imagecrop/src/app/main/main.css">
 <div class="container">
+    <div>
+        <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    </div>
 
-  <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
         <input filepicker type="filepicker-dragdrop" data-fp-services="computer,facebook,dropbox,box" on-success="main.onSuccess(event.fpfile)" />
 
     </div>
-  </div>
+    </div>
+    <div class="row" style="margin-top: 90px">
+        <h4 class="group inner list-group-item-heading">
+            Image</h4>
+        <div ng-show="main.perviewFlag" >
+            <img ng-src="{{main.perview | fpConvert: {w:200} }}">
+        </div>
+    </div>
 
+
+
+    <div ng-show="main.perviewFlag" id="images" class="row list-group" style="margin-top: 122px">
+        <div class="item   list-group-item col-xs-4 col-lg-4">
+            <div>
+                <img class="group list-group-image" src="https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:755,height:450/{{main.perview}}" alt="" />
+                <div >
+                    <h4 class="group inner list-group-item-heading">
+                        Image 755*450</h4>
+                </div>
+            </div>
+        </div>
+        <div class="item   list-group-item col-xs-4 col-lg-4">
+            <div>
+                <img class="group list-group-image" src="https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:365,height:450/{{main.perview}}" alt="" />
+                <div >
+                    <h4 class="group inner list-group-item-heading">
+                        Image 365*450</h4>
+                </div>
+            </div>
+        </div>
+        <div class="item   list-group-item col-xs-4 col-lg-4">
+            <div>
+                <img class="group list-group-image" src="https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:365,height:212/{{main.perview}}" alt="" />
+                <div >
+                    <h4 class="group inner list-group-item-heading">
+                        Image 365*212</h4>
+                </div>
+            </div>
+        </div>
+        <div class="item list-group-item col-xs-4 col-lg-4">
+            <div >
+                <img class="group list-group-image" src="https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:380,height:380/{{main.perview}}" alt="" />
+                <div >
+                    <h4 class="group inner list-group-item-heading">
+                        Image 380*380</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
